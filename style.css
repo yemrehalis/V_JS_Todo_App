@@ -5,15 +5,20 @@
 }
 
 body{
-    background-image: linear-gradient(120deg, #b8b2b2, #f75e30, #870bb8 );
+    background-image: linear-gradient(120deg, #dad6d6, #13b1b1, #870bb8 );
+    /* background-image: url("./bg.jpg"); */
     color: white;
-    font-family: 'Poppins', serif;
+    font-family:'Poppins', serif;
     font-weight: 900;
     min-height: 100vh;
+    
+    
 }
+
 
 header{
     font-size: 1.5rem;
+    
 }
 
 header,form{
@@ -21,6 +26,7 @@ header,form{
     display: flex;
     justify-content: center;
     align-items: center;
+    
     
 
 }
@@ -30,6 +36,7 @@ form input, form button{
     font-size: 2rem;
     border:none;
     background: white;
+    outline: none;
     
    
     
@@ -37,7 +44,7 @@ form input, form button{
 }
 
 form button{
-    color: #1ebff0;
+    color: #1ee2f0;
     background: white;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -49,7 +56,7 @@ form button{
 
 
 form button:hover {
-    background : #1ebff0;
+    background : #1ee2f0;
     color: white;
 }
 
@@ -58,28 +65,33 @@ form button:hover {
     justify-content: center;
     align-items: center;
     
+    
 }
 
 .todo-list{
     min-width: 40%;
     list-style: none;
+    
 }
 
 .todo{
     margin: 0.5rem;
     background:white;
-    color:rgb(71, 69, 69);
+    color:rgb(10, 10, 10);
     font-size: 1.5rem;
+    font-weight: 800;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 0.5rem;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .3); 
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
     border-radius: 3px;
     position: relative;
     z-index: 1;
     background: inherit;
     overflow: hidden;
+    transition: all .5s ease;
+    
 }
 .todo::before{
     content: "";
@@ -90,17 +102,19 @@ form button:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-    filter: blur(10px);
-    margin: -20px;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .8);
+    filter: blur(00.5px);
+    /* margin: -20px; */
+    
 }
 
 .todo li{
     flex:1;
+    
 }
 
 .trash-btn, .complete-btn{
-    background:#1ebff0;
+    background:#1ee2f0;
     color:white;
     border:none;
     padding: 1rem;
@@ -109,7 +123,8 @@ form button:hover {
 }
 
 .complete-btn{
-    background: #1ebff0;
+    background: #1ee2f0;
+    
 }
 .complete-btn:hover{
     background: rgb(24, 150, 24) ;
@@ -129,4 +144,52 @@ form button:hover {
 
 .fa-trash, .fa-check{
     pointer-events: none;
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall {
+    transform: translateX(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+
+select{
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   outline: none;
+   border: none; 
+}
+
+.select{
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+select {
+    color: #1ee2f0 ;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1.2rem;
+  
+}
+
+.select::after{
+    content:"\25BC";
+    position: absolute;
+    background: #1ee2f0;
+    top:0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.select:hover::after{
+    background: white;
+    color:#1ee2f0
 }
